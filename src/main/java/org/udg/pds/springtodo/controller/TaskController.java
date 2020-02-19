@@ -3,7 +3,6 @@ package org.udg.pds.springtodo.controller;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.udg.pds.springtodo.controller.exceptions.ControllerException;
 import org.udg.pds.springtodo.entity.IdObject;

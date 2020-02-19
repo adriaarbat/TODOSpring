@@ -41,7 +41,10 @@ public class User implements Serializable {
   private String password;
 
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-  private Collection<Task> tasks;
+    private Collection<Task> tasks;
+
+  @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+  private Collection<Group> owner_groups;
 
   @JsonView(Views.Private.class)
   public Long getId() {
@@ -72,7 +75,6 @@ public class User implements Serializable {
     // Since tasks is collection controlled by JPA, it has LAZY loading by default. That means
     // that you have to query the object (calling size(), for example) to get the list initialized
     // More: http://www.javabeat.net/jpa-lazy-eager-loading/
-    tasks.size();
     return tasks;
   }
 
@@ -80,4 +82,11 @@ public class User implements Serializable {
     tasks.add(task);
   }
 
+    public void addGroup(Group group) {
+      owner_groups.add(group);
+    }
+
+    public Collection<Group> getGroups() {
+      return owner_groups;
+    }
 }

@@ -1,9 +1,9 @@
 package org.udg.pds.springtodo.service;
 
+import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.udg.pds.springtodo.controller.exceptions.ServiceException;
 import org.udg.pds.springtodo.entity.IdObject;
 import org.udg.pds.springtodo.entity.Tag;
 import org.udg.pds.springtodo.entity.Task;
